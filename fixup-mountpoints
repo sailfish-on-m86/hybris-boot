@@ -1810,6 +1810,20 @@ case "$DEVICE" in
             -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_b sdc1 ' \
             "$@"
         ;;
+
+    "m86")
+        sed -i \
+            -e 's block/platform/15570000.ufs/by-name/boot mmcblk0p37 ' \
+            -e 's block/platform/15570000.ufs/by-name/cache mmcblk0p52 ' \
+            -e 's block/platform/15570000.ufs/by-name/dsp mmcblk0p22 ' \
+            -e 's block/platform/15570000.ufs/by-name/fsg mmcblk0p29 ' \
+            -e 's block/platform/15570000.ufs/by-name/modem mmcblk0p19 ' \
+            -e 's block/platform/15570000.ufs/by-name/persist mmcblk0p30 ' \
+            -e 's block/platform/15570000.ufs/by-name/recovery mmcblk0p38 ' \
+            -e 's block/platform/15570000.ufs/by-name/system mmcblk0p53 ' \
+            -e 's block/platform/15570000.ufs/by-name/userdata mmcblk0p54 ' \
+            "$@"
+        ;;    
     *)
         cat <<EOF
 
